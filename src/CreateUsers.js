@@ -33,7 +33,7 @@ function CreateUser() {
   try{
     axios.post("http://localhost:8080/users/create", form);
     alert("User added!");
-    setForm({ name: "", email: "" });
+    setForm({ name: "", email: "",password:"" });
     
   }
   catch(e){
