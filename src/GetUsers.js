@@ -16,8 +16,8 @@ function ReadUsers() {
  const [result, setResult] = useState(process(users, dataState));
    
  const handleDataStateChange = (event) => {
-   setDataState(event.dataState);
-   setResult(process(users, event.dataState));  
+   setDataState(event.dataState); 
+  //  setResult(process(users, event.dataState));  
  }; 
 
 
@@ -29,6 +29,10 @@ function ReadUsers() {
   useEffect(() => {
     fetchUsers();
   }, []);
+
+  useEffect(() => {
+  setResult(process(users, dataState));
+}, [users, dataState]);
 
 
 
@@ -45,7 +49,7 @@ function ReadUsers() {
     //   </ul>
     // </div>
      <Grid
-      data={result}
+      data={result.data}
       {...dataState}
        total={result.total}
       pageable={true}
@@ -60,4 +64,4 @@ function ReadUsers() {
   );
 }
 
-export default ReadUsers;
+export default ReadUsers; 
