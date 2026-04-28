@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
+import './CreateUsers.css'
 
 function CreateUser() {
-  const [form, setForm] = useState({ name: "", email: "" ,password:"    "});
+  const [form, setForm] = useState({ name: "", email: "" ,password:""});
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -44,14 +45,33 @@ function CreateUser() {
   };
 
   return (
-    <div>
-      <h3>Create User</h3>
-
-      <form onSubmit={handleSubmit}>
+    <div className="card">
+      <h3 className="title">Create User</h3>
+    {/* <form onSubmit={handmleSubmit}>
         <input name="name" value={form.name} onChange={handleChange} placeholder="Name" />
         <input name="email" value={form.email} onChange={handleChange} placeholder="Email" />
         <input name="password" value={form.password} onChange={handleChange} placeholder="Password" />
         <button type="submit">Add</button>
+      </form>  */}
+            <form onSubmit={handleSubmit}>
+              <div className="mb-3" >
+          <label  className="form-label">User name</label>
+          <input  name="name" type="text" className="form-control" onChange={handleChange} value={form.name}/>
+        
+        </div>
+              
+        <div className="mb-3" >
+          <label  className="form-label">Email address</label>
+          <input  name="email" type="email" className="form-control" onChange={handleChange} value={form.email} />
+        
+        </div>
+        <div className="mb-3">
+          <label  className="form-label">Password</label>
+          <input name="password" type="password" className="form-control"  onChange={handleChange} value={form.password}/>
+        </div>
+        
+
+        <button type="submit" className="btn btn-primary"  style={{  display: "block", margin: "20px auto" }}  >Submit</button>
       </form>
     </div>
   );

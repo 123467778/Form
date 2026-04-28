@@ -1,0 +1,17 @@
+.mb-3{
+  width: 50%;
+  margin:auto;
+  /* align-items: center; */
+    
+  
+}  
+.title{
+    text-align: center;
+    margin: 5px;
+}
+.card{
+    background-color: rgb(182, 223, 250);
+   margin-left: 30%;
+   margin-right: 30%;
+    
+}

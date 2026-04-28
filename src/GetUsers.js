@@ -3,6 +3,7 @@ import axios from "axios";
 import { process } from "@progress/kendo-data-query";
 import { Grid, GridColumn } from "@progress/kendo-react-grid";
 
+
 import "@progress/kendo-theme-default/dist/all.css";
 
 
@@ -36,6 +37,8 @@ function ReadUsers() {
 
 
 
+
+
   return (
     // <div>
     //   <h3>All Users</h3>
@@ -60,6 +63,7 @@ function ReadUsers() {
       <GridColumn field="name" title="Name" />
       <GridColumn field="email" title="Email" />
       <GridColumn field="password" title="Password" />
+     
     </Grid>
   );
 }
