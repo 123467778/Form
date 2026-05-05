@@ -38,8 +38,33 @@ function UpdateUser() {
   return (
     <div>
       <h3>Update User</h3>
-
       <input
+        placeholder="User ID"
+        value={id}
+        onChange={(e) => setId(e.target.value)}
+      />
+       <form onSubmit={handleUpdate}>
+              <div className="mb-3" >
+          <label  className="form-label">User name</label>
+          <input  name="name" type="text" className="form-control" onChange={handleChange} value={form.name}/>
+        
+        </div>
+              
+        <div className="mb-3" >
+          <label  className="form-label">Email address</label>
+          <input  name="email" type="email" className="form-control" onChange={handleChange} value={form.email} />
+        
+        </div>
+        <div className="mb-3">
+          <label  className="form-label">Password</label>
+          <input name="password" type="password" className="form-control"  onChange={handleChange} value={form.password}/>
+        </div>
+        
+
+        <button type="submit" className="btn btn-primary"  style={{  display: "block", margin: "20px auto" }}  >Submit</button>
+      </form>
+
+      {/* <input
         placeholder="User ID"
         value={id}
         onChange={(e) => setId(e.target.value)}
@@ -50,7 +75,7 @@ function UpdateUser() {
         <input name="email" placeholder="New Email" onChange={handleChange} />
            <input name="password" placeholder="password" onChange={handleChange} />
         <button type="submit">Update</button>
-      </form>
+      </form> */}
     </div>
   );
 }
